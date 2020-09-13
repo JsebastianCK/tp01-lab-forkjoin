@@ -14,6 +14,8 @@ public class App {
 
         ForkJoinPool fjp = new ForkJoinPool(); 
 
-        fjp.invoke(processor);
+        int numero = fjp.invoke(processor);
+
+        System.out.println(String.format("Numero: %s", numero));
     }
 }
