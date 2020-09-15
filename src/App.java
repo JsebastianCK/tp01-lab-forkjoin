@@ -1,5 +1,7 @@
 import java.io.File;
+import java.util.HashMap;
 import java.util.concurrent.ForkJoinPool;
+import java.awt.Color;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -14,6 +16,8 @@ public class App {
 
         ForkJoinPool fjp = new ForkJoinPool(); 
 
-        fjp.invoke(processor);
+        HashMap<String, Integer> color = fjp.invoke(processor);
+
+        System.out.println(String.format("RGB: (%s, %s, %s)", color.get("red"), color.get("green"), color.get("blue")));
     }
 }
